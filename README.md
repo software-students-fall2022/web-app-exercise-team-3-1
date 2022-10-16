@@ -4,8 +4,13 @@
 A little exercise to build a web application following an agile development process. See the [instructions](instructions.md) for more detail.
 
 ## Product vision statement
-
-See instructions. Delete this line and place the Product Vision Statement here.
+An application to help students find bathrooms across NYU's campus, with the following pages:
+1. Search by building (listed buildings)
+2. Search by floor once a building is selected
+3. Bathroom page
+4. Add a bathroom
+5. Your posts (edit/delete)
+6. Sign in/sign up
 
 ## User stories
 
