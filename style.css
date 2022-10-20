@@ -1,0 +1,16 @@
+* {
+    text-align: center;
+}
+
+form {
+    padding-top: 1rem;
+}
+
+form > button {
+    margin-top: 1rem;
+}
+
+form > input {
+    margin-top: .25rem;
+    margin-bottom: 1rem;
+}
