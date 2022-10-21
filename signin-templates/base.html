@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login-style.css">
     <title>NYU Bathroom Finder</title>
 </head>
 <body>
@@ -13,10 +13,16 @@
         <p>Please submit the form to login. Not officially offiliated with NYU 😈.</p>
         <hr>
         
-        <form action="">
-            <button type="submit" class="login-btn">Login</button>
-            <br>
-            <button type="submit" class="signup-btn">Sign Up</button>
-        </form>
-</body>
+        <main>{% block container} {% endblock %}</main>
+    </body>
+
+    <footer>
+        <p>
+            &copy; 2022. Shared under the GPL3 license. Source code available at
+            <a
+              href="https://github.com/nyu-software-engineering/flask-pymongo-web-app-example"
+              >available on Github</a
+            >.
+          </p>
+    </footer>
 </html>
