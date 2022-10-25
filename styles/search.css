@@ -43,9 +43,22 @@ form > input {
     width: 500px;
     height: 65px;
     margin-top: 10px;
-    line-height: 65px;
+    line-height: 55px;
     color: white;
     font-weight: bold;
     font-size: 2em;
     text-align: center;
   }
+
+button {
+    padding: 10px;
+}
+
+.login-btn {
+    padding: 3px;
+}
+
+.floor-btn {
+    padding-left: 50px;
+    padding-right: 50px;
+}
