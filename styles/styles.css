@@ -1,0 +1,38 @@
+* {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    padding-top: 1rem;
+}
+
+form > button {
+    margin-top: 1rem;
+}
+
+form > input {
+    margin-top: .25rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 10px;
+}
+
+.search-btn {
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.floor-btn {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#buildings, #floors {
+    width: 250px;
+    height: 50px;
+}
