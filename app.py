@@ -247,9 +247,20 @@ def add_comment():
 
 @app.route('/addComment', methods=['POST'])
 def analyze_comment():
+    bName = session.get('bName')
+    fNum = session.get('fNum')
+    us = session.get('username')
+    comText = request.form['comment']
+
+    doc = {
+        "username": us,
+        "building": bName,
+        "floor": fNum,
+        "text": comText
+    }
 
     db.comments.insert_one(doc)
-    return render_template("addComment.html", success = 1)
+    return redirect (url_for('show_rest'))
 
 
 @app.route('/profile')
@@ -258,6 +269,15 @@ def get_profile():
     user = db.users.find_one({ "username": us})
     user_coms = db.comments.find({ "username": us})
     return render_template("profile.html", user = user, coms = user_coms)
+
+@app.route('/delete/<comment_id>')
+def delete(comment_id):
+    """
+    Route for GET requests to the delete page.
+    Deletes the specified record from the database, and then redirects the browser to the home page.
+    """
+    db.comments.delete_one({"_id": ObjectId(comment_id)})
+    return redirect(url_for('get_profile')) # tell the web browser to make a request for the / route (the home function)
 
 
 # route to handle any errors

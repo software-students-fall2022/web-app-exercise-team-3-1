@@ -3,10 +3,17 @@
 <p>Please submit the form to login. Not officially offiliated with NYU 😈.</p>
 <hr>
         
-<form action="">
-    <button type="submit" class="login-btn">Login</button>
+<form method="POST" action="{{ url_for('home_post') }}">
+
+    <select id="home_options" name="home_choice">
+        <option value="login">Login</option>
+        <option value="signup">Sign Up</option>
+    </select>
+
     <br>
-    <button type="submit" class="signup-btn">Sign Up</button>
+    <br>
+    <input type="submit" class="search-btn" value="Go">
+
 </form>
 
 {% endblock %}
