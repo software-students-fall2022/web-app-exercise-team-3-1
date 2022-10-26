@@ -270,6 +270,47 @@ def get_profile():
     user_coms = db.comments.find({ "username": us})
     return render_template("profile.html", user = user, coms = user_coms)
 
+@app.route('/edit/<comment_id>')
+def edit(comment_id):
+    """
+    Route for GET requests to the edit page.
+    Displays a form users can fill out to edit an existing record.
+    """
+    doc = db.comments.find_one({"_id": ObjectId(comment_id)})
+    return render_template('editComment.html', doc=doc) # render the edit template
+
+@app.route('/edit/<comment_id>', methods=['POST'])
+def edit_comment(comment_id):
+    """
+    Route for POST requests to the edit page.
+    Accepts the form submission data for the specified document and updates the document in the database.
+    """
+    bName = session.get('bName')
+    fNum = session.get('fNum')
+    us = session.get('username')
+    comText = request.form['comment']
+
+    # doc = {
+    #     # "_id": ObjectId(post_id), 
+    #     "name": name, 
+    #     "message": message, 
+    #     "created_at": datetime.datetime.utcnow()
+    # }
+
+    doc = {
+        "username": us,
+        "building": bName,
+        "floor": fNum,
+        "text": comText
+    }
+
+    db.comments.update_one(
+        {"_id": ObjectId(comment_id)}, # match criteria
+        { "$set": doc }
+    )
+
+    return redirect(url_for('get_profile')) # tell the browser to make a request for the / route (the home function)
+
 @app.route('/delete/<comment_id>')
 def delete(comment_id):
     """
