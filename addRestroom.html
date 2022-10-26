@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block container %}
+<h1>Add Restroom</h1>
+
+<p id="success">Restroom Added</p>
+
+<form method="POST" action="{{ url_for('analyze_new') }}">
+
+    <label for="building"><b><h2>Choose a building</h2></b></label>
+    <select id="loc_b" name="loc_b"> 
+        <option value="kimmel">Kimmel Center for University Life</option>
+        <option value="bobst">Elmer Holmes Bobst Library</option>
+        <option value="slc-manhattan">Student Link Center (Manhattan)</option>
+        <option value="silver">Silver Center for Arts and Science</option>
+        <option value="meyer">Meyer Hall</option>
+        <option value="tandon">Tandon School of Engineering</option>
+        <option value="slc-brooklyn">Student Link Center - Brooklyn</option>
+    </select>
+
+    <label for="floor"><b><h2>Choose a floor</h2></b></label>
+    <select id="loc_f" name="loc_f">
+        <option value="floor-1">Floor 1</option>
+        <option value="floor-2">Floor 2</option>
+        <option value="floor-3">Floor 3</option>
+        <option value="floor-4">Floor 4</option>
+        <option value="floor-5">Floor 5</option>
+        <option value="floor-6">Floor 6</option>
+        <option value="floor-7">Floor 7</option>
+    </select>
+
+    <label for="description"><b><h2>Describe the restroom</h2></b></label>
+    <input type="text" placeholder="Enter Description" name="description" required>
+
+    <label for="available"><b><h2>Is it open?</h2></b></label>
+    <select id="available" name="available">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+    </select>
+
+    <br>
+    <br>
+    <input type="submit" class="search-btn" value="Go">
+
+</form>
+
+<script>
+    if ( '{{ success }}' == 1 ) {
+        document.getElementById("success").style.display = "block";
+    } 
+    else {
+        document.getElementById("success").style.display = "none";
+    }
+</script>
+
+<br>
+
+<a href="buildings">Back to Search</a>
+
+{% endblock %}

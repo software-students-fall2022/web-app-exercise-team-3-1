@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block container %}
+
+<h1> My Profile </h1>
+
+<h2 id="name"> {{user.first}} {{user.last}} </h2>
+
+<h3 id="user"> Username: {{user.username}} </h3>
+
+<h3 id="email"> Email: {{user.email}} </h3>
+
+<a href="editProfile.html"> Edit Profile </a>
+
+<h2> My Comments </h2>
+
+{% for com in coms %}
+<div class="user_comments"> 
+    <p class="where"> {{com.building}}, Floor {{com.floor}} </p>
+    <p class="message"> {{com.text}} </p>
+</div>
+{%endfor%}
+
+{% endblock %}
