@@ -4,17 +4,12 @@
 
 <h1> Restroom Found </h1>
 
-<p> Now showing result for restroom at {{b}}, Floor {{f}}</p>
+<h3 id="bathroom-found-message"> Now showing result for restroom at {{b}}, Floor {{f}}</h3>
 
-<p class="desc"> {{cr.desc}} </p>
 
-<p class="rating"> Rating: {{cr.rating}} </p>
+<h3> Existing Comments: </h3>
+<p class="desc"> <em>"{{cr.desc}}"</em> </p>
 
-<p id="closed"> </p>
-
-<br>
-
-<h2> Comments </h2>
 
 {% for com in coms %}
 <div class="comment"> 
@@ -22,19 +17,23 @@
     <p class="message"> {{com.text}} </p>
 </div>
 {%endfor%}
+<hr>
 
 <form method="POST" action="{{ url_for('add_comment') }}">
-
-    <label for="comment"><b>Comment</b></label><br>
-    <input type="text" class="comment" placeholder="Enter comment" name="comment" required>
-
+    <label for="comment">Enter a comment:</label>
     <br>
-
+    <input type="text" class="comment" placeholder="Enter comment" name="comment" required>
+    <br>
     <button type="submit" class="search-btn">Submit</button>
 
 <br> 
-
-<a href="buildings"> Return to Search </a>
+<br>
+<hr>
+<br>
+<a href="buildings"> Return to Search </a> 
+<br>
+<br>
+<a href="profile"> See your profile and comments</a>
 
 <script>
     let available = '{{cr.available}}';
@@ -42,5 +41,4 @@
         document.getElementById('closed').innerHTML = "CURRENTLY CLOSED"
     }
 </script>
-
 {% endblock %}
