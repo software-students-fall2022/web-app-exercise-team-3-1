@@ -2,7 +2,7 @@
 
 {% block container %}
 <h2>Update</h2>
-<p>Edit a record in the MongoDB database collection.</p>
+<p>Edit your comment and save it.</p>
 <form method="POST" action="{{ url_for('edit_comment', comment_id=doc._id) }}">
     <input type="text" id="comment" name="comment" value="{{doc.text}}" placeholder="Your comment"/>
     <br />
