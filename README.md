@@ -3,6 +3,12 @@
 
 A little exercise to build a web application following an agile development process. See the [instructions](instructions.md) for more detail.
 
+## Team members
+Maaz Ahmed
+Andrei Stoica
+Mark Chen
+Paula Seraphim
+
 ## Product vision statement
 An application to help students find bathrooms across NYU's campus, with the following pages:
 1. Search by building (listed buildings)
