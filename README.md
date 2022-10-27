@@ -14,14 +14,14 @@ An application to help students find bathrooms across NYU's campus, with the fol
 
 ## User stories
 
-User stories can be found [here](https://github.com/software-students-fall2022/web-app-exercise-team-3-1/issues)
+User stories can be found [here](https://github.com/software-students-fall2022/web-app-exercise-team-3-1/issues).
 
 ## Task boards
 
 [Sprint Boards](https://github.com/software-students-fall2022/web-app-exercise-team-3-1/projects?query=is:open)
 
 ## Daily Standups
-Find daily standup summaries [here](https://docs.google.com/document/d/1l_AtEtYUgvswqCIDV1XkllwdDflMdx1pdjg-QFJPSUE/edit)
+Find daily standup summaries [here](https://docs.google.com/document/d/1l_AtEtYUgvswqCIDV1XkllwdDflMdx1pdjg-QFJPSUE/edit).
 
 ## How to run the application
 - install and run [docker desktop](https://www.docker.com/get-started)
