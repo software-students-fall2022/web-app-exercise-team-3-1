@@ -23,6 +23,9 @@ User stories can be found [here](https://github.com/software-students-fall2022/w
 ## Daily Standups
 Find daily standup summaries [here](https://docs.google.com/document/d/1l_AtEtYUgvswqCIDV1XkllwdDflMdx1pdjg-QFJPSUE/edit).
 
+## Demo
+Find a recorded demo [here](https://drive.google.com/file/d/1ndM4sruBuC13mQRwOoBajRkeyA2mtad5/view?pli=1).
+
 ## How to run the application
 - install and run [docker desktop](https://www.docker.com/get-started)
 - create a [dockerhub](https://hub.docker.com/signup) account
