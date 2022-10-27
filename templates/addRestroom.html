@@ -1,11 +1,8 @@
 {% extends 'base.html' %} {% block container %}
-<h1>Add Restroom</h1>
-
-<p id="success">Restroom Added</p>
+<h1>Add a Restroom</h1>
 
 <form method="POST" action="{{ url_for('analyze_new') }}">
-
-    <label for="building"><b><h2>Choose a building</h2></b></label>
+    <label for="building"><b><h2>Pick a building:</h2></b></label>
     <select id="loc_b" name="loc_b"> 
         <option value="kimmel">Kimmel Center for University Life</option>
         <option value="bobst">Elmer Holmes Bobst Library</option>
@@ -16,7 +13,7 @@
         <option value="slc-brooklyn">Student Link Center - Brooklyn</option>
     </select>
 
-    <label for="floor"><b><h2>Choose a floor</h2></b></label>
+    <label for="floor"><b><h2>Pick a Floor:</h2></b></label>
     <select id="loc_f" name="loc_f">
         <option value="floor-1">Floor 1</option>
         <option value="floor-2">Floor 2</option>
@@ -27,7 +24,7 @@
         <option value="floor-7">Floor 7</option>
     </select>
 
-    <label for="description"><b><h2>Describe the restroom</h2></b></label>
+    <label for="description"><b><h2>Leave a Review:</h2></b></label>
     <input type="text" placeholder="Enter Description" name="description" required>
 
     <label for="available"><b><h2>Is it open?</h2></b></label>
@@ -39,8 +36,9 @@
     <br>
     <br>
     <input type="submit" class="search-btn" value="Go">
-
 </form>
+
+<h1 id="success">Restroom Successfully Added</h1>
 
 <script>
     if ( '{{ success }}' == 1 ) {
@@ -52,7 +50,8 @@
 </script>
 
 <br>
-
+<hr>
+<br>
 <a href="buildings">Back to Search</a>
 
 {% endblock %}
