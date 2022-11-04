@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block container %}
+
+<h1> Restroom Found </h1>
+
+<h3 id="bathroom-found-message"> Now showing result for restroom at {{b}}, Floor {{f}}</h3>
+
+
+<p class="desc"> Bathroom Description: <em>{{cr.desc}}</em> </p>
+
+<h3> Existing Comments: </h3>
+{% for com in coms %}
+<div class="comment"> 
+    <p class="author"> {{com.user}} </p>
+    <p class="message"> {{com.text}} </p>
+</div>
+{%endfor%}
+<hr>
+
+<form method="POST" action="{{ url_for('add_comment') }}">
+    <label for="comment">Enter a comment:</label>
+    <br>
+    <input type="text" class="comment" placeholder="Enter comment" name="comment" required>
+    <br>
+    <button type="submit" class="search-btn">Submit</button>
+
+<br> 
+<br>
+<hr>
+<br>
+<a href="buildings"> Return to Search </a> 
+<br>
+<br>
+<a href="profile"> See your profile and comments</a>
+
+<script>
+    let available = '{{cr.available}}';
+    if (available === "N") {
+        document.getElementById('closed').innerHTML = "CURRENTLY CLOSED"
+    }
+</script>
+{% endblock %}

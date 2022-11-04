@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block container %}
+<h1>Welcome to NYU Bathroom Finder!</h1>
+<p>Please submit the form to login. Not officially offiliated with NYU 😈.</p>
+<hr>
+        
+<form method="POST" action="{{ url_for('home_post') }}">
+
+    <select id="home_options" name="home_choice">
+        <option value="login">Login</option>
+        <option value="signup">Sign Up</option>
+    </select>
+
+    <br>
+    <br>
+    <input type="submit" class="search-btn" value="Go">
+
+</form>
+
+{% endblock %}

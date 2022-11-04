@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block container %}
+
+<h1> My Profile </h1>
+
+<div id="profileDetails">
+    <h2 id="name"> {{user.first}} {{user.last}} </h2>
+    <h3 id="user"> Username: {{user.username}} </h3>
+    <h3 id="email"> Email: {{user.email}} </h3>
+</div>
+<br>
+<br>
+
+<form action="/">
+    <button class="logout-btn">Logout</button>
+</a>
+
+<hr>
+<h1> My Comments </h1>
+{% for com in coms %}
+<div class="user_comments"> 
+
+    <p class="where"> {{com.building}}, Floor {{com.floor}} </p>
+    <p class="message"> {{com.text}} </p>
+    <nav class="controls">
+        <a href="{{ url_for('edit', comment_id=com._id)}}">Edit</a> | <a href="{{ url_for('delete', comment_id=com._id)}}">Delete</a>
+    </nav>
+</div>
+<br>
+{%endfor%}
+<hr>
+<a href="buildings">Return to Search</a>
+
+{% endblock %}
